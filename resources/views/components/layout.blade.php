@@ -52,21 +52,24 @@
             if (!session()->has('last_conversation')) {
                 session(['last_conversation' => 0]);
             }
-            
+
         @endphp
     @endif
     <div id="confirmModal" class="modal">
         <div class="modal-content">
             <p>Are you sure you want to delete?</p>
-            <button id="confirmButton" class="text-center text-lg h-8 w-24 text-text-black rounded-lg bg-buttons hover:bg-onhover">Confirm</button>
-            <button id="cancelButton" class="text-center text-lg h-8 w-24 text-text-black rounded-lg bg-accent hover:bg-onhover">Cancel</button>
+            <button id="confirmButton"
+                class="text-center text-lg h-8 w-24 text-text-black rounded-lg bg-buttons hover:bg-onhover">Confirm</button>
+            <button id="cancelButton"
+                class="text-center text-lg h-8 w-24 text-text-black rounded-lg bg-accent hover:bg-onhover">Cancel</button>
         </div>
     </div>
     {{-- navbar --}}
     <nav class="w-full mx-auto flex flex-col items-center xl:w-3/4 xl:mx-auto xl:flex xl:flex-col xl:items-center ">
         {{-- top section of navbar --}}
-        <section class="w-full dropshadow flex -justify-center h-48 md:h-24 bg-background rounded-b-lg"> 
-            <div class=" space-x-6 items-center grid grid-cols-1 md:grid-cols-3 w-11/12 gap-x-52 justify-center mx-auto">
+        <section class="w-full dropshadow flex -justify-center h-48 md:h-24 bg-background rounded-b-lg">
+            <div
+                class=" space-x-6 items-center grid grid-cols-1 md:grid-cols-3 w-11/12 gap-x-52 justify-center mx-auto">
                 {{--  Col 1 --}}
                 <div class="flex w-5/6 mt-3 lg:mt-0 lg:w-full">
                     {{-- Search bar --}}
@@ -84,8 +87,7 @@
 
                     {{-- auth directive only shows the elements when logged in --}}
                     @auth
-                        <div
-                            class="hidden md:block text-center text-black">
+                        <div class="hidden md:block text-center text-black">
                             <span>Hi, {{ auth()->user()->name }}!</span>
                         </div>
                         <div
@@ -155,8 +157,7 @@
         <x-chat :contactUsers="$contactUsers" />
         {{-- </div> --}}
     @endif
-    <button
-        class="scrollToTopButton">
+    <button class="scrollToTopButton">
         <i class="fa-solid fa-angles-up arrow-up text-accent"></i>
     </button>
 
@@ -194,10 +195,12 @@
                         <a href="/login-as-user/2" class="btn btn-primary">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="/login-as-user/1" class="btn btn-primary">
+                        <a href="#" class="btn btn-primary">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <i class="fab fa-linkedin"></i>
+                        <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
                 </div>
 
